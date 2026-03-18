@@ -14,6 +14,21 @@ int main() {
 
     // Store scores and keep track of how many are entered
     // Report perfect scores using the helper function
+    while(count < 20){
+        cout << "Enter score: ";
+        cin >> input;
+        if (input == -1){
+            break;
+        }
+        else if (input >= 0 && input <= 100){
+            scores[count] = input;
+            count++;
+        }
+        else{
+            cout << "Please enter a score from 0-100 or enter -1 to stop" << endl;
+        }
+    }
+
   // COMPLETE THE FUNCTION BELOW
   int perfectOnes = countPerfect(scores, count);
     
@@ -27,5 +42,10 @@ int main() {
 int countPerfect(const int scores[], int size) {
     int totalPerfect = 0;
     //COMPLETE THE CODE 
+    for (int i = 0; i < size; i++){
+        if(scores[i] == 100){
+            totalPerfect++;
+        }
+    }
     return totalPerfect;
 }
